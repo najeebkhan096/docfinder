@@ -1,0 +1,476 @@
+<!doctype html>
+<html lang="en" class="no-js">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>DocFinder – Find every document on your phone</title>
+<meta name="description" content="DocFinder automatically finds, reads and sorts the documents on your phone — IDs, passports, bills, receipts, certificates and more — and lets you search them by ID number, name or any word. Private and on-device.">
+<meta name="theme-color" content="#0f766e">
+<link rel="canonical" href="https://najeebkhan096.github.io/docfinder/">
+
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="DocFinder">
+<meta property="og:title" content="DocFinder – Find every document on your phone">
+<meta property="og:description" content="Automatically finds, reads and sorts the IDs, bills, receipts and certificates hidden in your photos and files. Search by any number or word. Everything stays on your device.">
+<meta property="og:url" content="https://najeebkhan096.github.io/docfinder/">
+<meta property="og:image" content="https://najeebkhan096.github.io/docfinder/assets/icon-512.png">
+<meta name="twitter:card" content="summary">
+
+<link rel="icon" type="image/png" href="assets/favicon.png">
+<link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/styles.css">
+
+<script>document.documentElement.classList.remove('no-js');try{var t=localStorage.getItem('theme');if(t)document.documentElement.setAttribute('data-theme',t)}catch(e){}</script>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "MobileApplication",
+  "name": "DocFinder",
+  "operatingSystem": "Android",
+  "applicationCategory": "UtilitiesApplication",
+  "description": "Finds, reads and sorts the documents on your phone and lets you search them by ID number, name, date or any word. Everything runs on the device.",
+  "url": "https://najeebkhan096.github.io/docfinder/",
+  "image": "https://najeebkhan096.github.io/docfinder/assets/icon-512.png",
+  "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+  "author": { "@type": "Person", "name": "Najeeb Khan" }
+}
+</script>
+</head>
+<body>
+
+<!-- Icon sprite -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <symbol id="i-search" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></symbol>
+    <symbol id="i-shield" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3 4 6v6c0 5 3.4 8.3 8 9 4.6-.7 8-4 8-9V6z"/><path d="m9 12 2 2 4-4"/></symbol>
+    <symbol id="i-lock" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="11" width="16" height="10" rx="2"/><path d="M8 11V7a4 4 0 0 1 8 0v4"/></symbol>
+    <symbol id="i-scan" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 8V6a2 2 0 0 1 2-2h2M16 4h2a2 2 0 0 1 2 2v2M20 16v2a2 2 0 0 1-2 2h-2M8 20H6a2 2 0 0 1-2-2v-2"/><path d="M7 12h10"/></symbol>
+    <symbol id="i-image" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="16" rx="2"/><circle cx="9" cy="10" r="2"/><path d="m21 16-5-5-9 9"/></symbol>
+    <symbol id="i-file" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8z"/><path d="M14 3v5h5M9 13h6M9 17h6"/></symbol>
+    <symbol id="i-grid" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7" rx="1.5"/><rect x="14" y="3" width="7" height="7" rx="1.5"/><rect x="3" y="14" width="7" height="7" rx="1.5"/><rect x="14" y="14" width="7" height="7" rx="1.5"/></symbol>
+    <symbol id="i-hash" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 9h16M4 15h16M10 3 8 21M16 3l-2 18"/></symbol>
+    <symbol id="i-copy" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="12" height="12" rx="2"/><path d="M5 15H4a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1h10a1 1 0 0 1 1 1v1"/></symbol>
+    <symbol id="i-refresh" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12a9 9 0 1 1-2.6-6.4L21 8"/><path d="M21 3v5h-5"/></symbol>
+    <symbol id="i-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="m5 12 5 5L20 7"/></symbol>
+    <symbol id="i-check-circle" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="m8 12 3 3 5-6"/></symbol>
+    <symbol id="i-wifi-off" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m2 2 20 20M8.5 16.5a5 5 0 0 1 7 0M5 12.9a10 10 0 0 1 5.2-2.8M19 12.9a10 10 0 0 0-2.3-1.6M2 8.8a15 15 0 0 1 4.2-2.7M22 8.8A15 15 0 0 0 10.7 5"/><path d="M12 20h.01"/></symbol>
+    <symbol id="i-user-x" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="8" r="4"/><path d="M2 21a7 7 0 0 1 14 0M17 8l5 5M22 8l-5 5"/></symbol>
+    <symbol id="i-file-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8z"/><path d="M14 3v5h5"/><path d="m9 15 2 2 4-4"/></symbol>
+    <symbol id="i-down" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14M6 13l6 6 6-6"/></symbol>
+    <symbol id="i-right" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></symbol>
+    <symbol id="i-home" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 11 12 4l9 7"/><path d="M5 10v10h14V10"/></symbol>
+    <symbol id="i-id" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"/><circle cx="9" cy="11" r="2"/><path d="M6 16a3 3 0 0 1 6 0M14 10h4M14 14h3"/></symbol>
+    <symbol id="i-wallet" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="6" width="18" height="13" rx="2"/><path d="M3 10h18M16 15h2"/></symbol>
+    <symbol id="i-briefcase" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="7" width="18" height="13" rx="2"/><path d="M9 7V5a2 2 0 0 1 2-2h2a2 2 0 0 1 2 2v2M3 13h18"/></symbol>
+    <symbol id="i-scale" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v18M7 21h10M5 7h14M5 7l-3 7a3 3 0 0 0 6 0zM19 7l-3 7a3 3 0 0 0 6 0z"/></symbol>
+    <symbol id="i-heart" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.8 8.6a5 5 0 0 0-8.8-3.2 5 5 0 0 0-8.8 3.2c0 5.4 8.8 11.4 8.8 11.4s8.8-6 8.8-11.4z"/></symbol>
+    <symbol id="i-plane" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17.8 19.2 16 11l3.5-3.5C21 6 21.5 4 21 3c-1-.5-3 0-4.5 1.5L13 8 4.8 6.2c-.5-.1-.9.1-1.1.5l-.3.5c-.2.5-.1 1 .3 1.3L9 12l-2 3H4l-1 1 3 2 2 3 1-1v-3l3-2 3.5 5.3c.3.4.8.5 1.3.3l.5-.2c.4-.3.6-.7.5-1.2z"/></symbol>
+    <symbol id="i-folder" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 7a2 2 0 0 1 2-2h4l2 2h8a2 2 0 0 1 2 2v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></symbol>
+    <symbol id="i-phone" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="6" y="2" width="12" height="20" rx="3"/><path d="M11 18h2"/></symbol>
+    <symbol id="i-sparkle" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3c.6 4.2 2.8 6.4 7 7-4.2.6-6.4 2.8-7 7-.6-4.2-2.8-6.4-7-7 4.2-.6 6.4-2.8 7-7z"/><path d="M19 16c.3 1.6 1 2.4 2.5 2.5-1.5.3-2.2 1-2.5 2.5-.3-1.5-1-2.2-2.5-2.5 1.5-.1 2.2-.9 2.5-2.5z"/></symbol>
+    <symbol id="i-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></symbol>
+    <symbol id="i-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.8A9 9 0 1 1 11.2 3 7 7 0 0 0 21 12.8z"/></symbol>
+    <symbol id="i-play" viewBox="0 0 24 24"><path fill="#00D7FE" d="M3.6 2.2 13.4 12l-9.8 9.8c-.4-.2-.6-.7-.6-1.2V3.4c0-.5.2-1 .6-1.2z"/><path fill="#FFCE00" d="M16.7 15.3 13.4 12l3.3-3.3 3.8 2.2c1.1.6 1.1 1.6 0 2.2z"/><path fill="#FF3A44" d="M16.7 15.3 13.4 12l-9.8 9.8c.4.4 1 .4 1.7 0z"/><path fill="#00F076" d="M16.7 8.7 5.3 2.2c-.7-.4-1.3-.4-1.7 0L13.4 12z"/></symbol>
+  </defs>
+</svg>
+
+<a class="skip" href="#main">Skip to content</a>
+
+<header class="site-header" id="top">
+  <div class="container nav">
+    <a class="brand" href="#top" aria-label="DocFinder home">
+      <img src="assets/icon-512.png" alt="" width="34" height="34">
+      DocFinder
+    </a>
+    <ul class="nav-links">
+      <li><a href="#features">Features</a></li>
+      <li><a href="#how">How it works</a></li>
+      <li><a href="#categories">Categories</a></li>
+      <li><a href="#privacy">Privacy</a></li>
+      <li><a href="#faq">FAQ</a></li>
+    </ul>
+    <div class="nav-right">
+      <button class="theme-toggle" type="button" aria-label="Toggle dark mode">
+        <svg class="t-moon"><use href="#i-moon"/></svg>
+      </button>
+      <a class="btn btn-primary" data-store="play" href="https://play.google.com/store/apps/details?id=com.najeebkhan.docfinder" target="_blank" rel="noopener">
+        <span>Get <span class="long">the </span>app</span>
+      </a>
+    </div>
+  </div>
+</header>
+
+<main id="main">
+
+  <!-- ============ HERO ============ -->
+  <section class="hero">
+    <div class="container hero-grid">
+      <div>
+        <div class="eyebrow reveal"><span class="dot"></span> Now on Android · iOS coming soon</div>
+        <h1 class="reveal">Every document on your phone. <span class="hl">Found, sorted, searchable.</span></h1>
+        <p class="lead reveal">DocFinder scans your photos, screenshots and files, recognises IDs, passports, bills, receipts and certificates, and files them into neat categories — so you can find any document in seconds by its number, a name or any word inside it.</p>
+        <div class="store-row reveal">
+          <a class="store" data-store="play" href="https://play.google.com/store/apps/details?id=com.najeebkhan.docfinder" target="_blank" rel="noopener" aria-label="Get DocFinder on Google Play">
+            <svg aria-hidden="true"><use href="#i-play"/></svg>
+            <span><small>Get it on</small><strong>Google Play</strong></span>
+          </a>
+          <a class="store soon" data-store="ios" aria-label="DocFinder for iPhone: coming soon to the App Store">
+            <svg aria-hidden="true"><use href="#i-phone"/></svg>
+            <span><small>Coming soon on</small><strong>App Store</strong></span>
+            <span class="tag">Soon</span>
+          </a>
+        </div>
+        <div class="hero-trust reveal">
+          <span><svg><use href="#i-lock"/></svg> Stays on your phone</span>
+          <span><svg><use href="#i-user-x"/></svg> No account needed</span>
+          <span><svg><use href="#i-wifi-off"/></svg> Works offline</span>
+        </div>
+      </div>
+
+      <div class="phone-stage reveal" aria-hidden="true">
+        <div class="float f1">
+          <span class="ic" style="background:#dcfce7;color:#15803d"><svg><use href="#i-check"/></svg></span>
+          <span>Passport detected<small>Identity &amp; Civil</small></span>
+        </div>
+        <div class="float f2">
+          <span class="ic" style="background:#dbeafe;color:#1d4ed8"><svg><use href="#i-sparkle"/></svg></span>
+          <span>IBAN verified<small>Tap to copy</small></span>
+        </div>
+
+        <div class="phone">
+          <div class="screen">
+            <div class="s-status"><span>9:41</span><span>●●● ▮</span></div>
+            <div class="s-head">
+              <h4>Search</h4>
+              <div class="s-search">
+                <svg><use href="#i-search"/></svg>
+                <span class="s-query" id="mock-query">35202 1234567 1</span><span class="s-caret"></span>
+              </div>
+            </div>
+            <div class="s-chips">
+              <span class="s-chip on">All</span>
+              <span class="s-chip">Images</span>
+              <span class="s-chip">PDFs &amp; files</span>
+              <span class="s-chip">Identity</span>
+            </div>
+            <div class="s-body">
+              <div class="s-label" id="mock-count">1 match</div>
+              <div class="s-card" id="mock-hit">
+                <span class="s-thumb" id="mock-thumb" style="background:#0f766e"><svg id="mock-icon"><use href="#i-id"/></svg></span>
+                <span>
+                  <b id="mock-title">National ID card</b>
+                  <span class="sub" id="mock-cat">Identity &amp; Civil · Photo</span><br>
+                  <span class="why" id="mock-why">National ID 35202-1234567-1</span>
+                </span>
+              </div>
+              <div class="s-label">Recently found</div>
+              <div class="s-card dim">
+                <span class="s-thumb" style="background:#0891b2"><svg><use href="#i-plane"/></svg></span>
+                <span><b>Boarding pass</b><span class="sub">Travel &amp; Vehicle · PDF</span></span>
+              </div>
+              <div class="s-card dim">
+                <span class="s-thumb" style="background:#2563eb"><svg><use href="#i-wallet"/></svg></span>
+                <span><b>Electricity bill</b><span class="sub">Money &amp; Bills · Photo</span></span>
+              </div>
+              <div class="s-card dim">
+                <span class="s-thumb" style="background:#7c3aed"><svg><use href="#i-briefcase"/></svg></span>
+                <span><b>Degree certificate</b><span class="sub">Work &amp; Education · PDF</span></span>
+              </div>
+            </div>
+            <div class="s-nav">
+              <div><svg><use href="#i-home"/></svg>Home</div>
+              <div class="on"><svg><use href="#i-grid"/></svg>Categories</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ STATS ============ -->
+  <div class="stats">
+    <div class="container stats-grid">
+      <div class="stat"><strong>30</strong><span>Smart categories</span></div>
+      <div class="stat"><strong>5</strong><span>File types read</span></div>
+      <div class="stat"><strong>0</strong><span>Documents uploaded</span></div>
+      <div class="stat"><strong>100%</strong><span>On-device reading</span></div>
+    </div>
+  </div>
+
+  <!-- ============ FEATURES ============ -->
+  <section class="section" id="features">
+    <div class="container">
+      <div class="section-head reveal">
+        <span class="kicker">Features</span>
+        <h2>Your paperwork, finally in order</h2>
+        <p>Photos of IDs, screenshots of tickets, PDFs from the bank — scattered across your phone. DocFinder pulls them all into one organised place.</p>
+      </div>
+      <div class="features">
+        <article class="feature reveal">
+          <div class="f-icon"><svg><use href="#i-scan"/></svg></div>
+          <h3>Automatic scanning</h3>
+          <p>One tap scans every photo and screenshot, plus every PDF, Word, Excel and PowerPoint file on your phone. No picking files one by one.</p>
+        </article>
+        <article class="feature reveal">
+          <div class="f-icon"><svg><use href="#i-image"/></svg></div>
+          <h3>Reads text in photos</h3>
+          <p>Built-in text recognition reads photos and scanned PDF pages, so even a picture of a receipt becomes searchable.</p>
+        </article>
+        <article class="feature reveal">
+          <div class="f-icon"><svg><use href="#i-grid"/></svg></div>
+          <h3>30 smart categories</h3>
+          <p>Passports, bank statements, invoices, medical reports, contracts and more — sorted automatically into 7 easy groups.</p>
+        </article>
+        <article class="feature reveal">
+          <div class="f-icon"><svg><use href="#i-hash"/></svg></div>
+          <h3>Search by any number</h3>
+          <p>Type an ID number however you like — with spaces, dashes or just part of it — and DocFinder still finds the right document.</p>
+        </article>
+        <article class="feature reveal">
+          <div class="f-icon"><svg><use href="#i-copy"/></svg></div>
+          <h3>Key details, one tap to copy</h3>
+          <p>ID numbers, names, dates, IBANs, totals and masked card numbers are pulled out for you. IBANs and card numbers are checked for validity.</p>
+        </article>
+        <article class="feature reveal">
+          <div class="f-icon"><svg><use href="#i-refresh"/></svg></div>
+          <h3>Picks up where it left off</h3>
+          <p>Stop a scan any time and it resumes later. New files are added, edited files are re-read, and deleted files drop off the list.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ HOW IT WORKS ============ -->
+  <section class="section alt" id="how">
+    <div class="container">
+      <div class="section-head reveal">
+        <span class="kicker">How it works</span>
+        <h2>Organised in three steps</h2>
+        <p>No setup, no sign-up. Install the app and let it do the sorting.</p>
+      </div>
+      <div class="steps">
+        <div class="step reveal">
+          <h3>Scan your phone</h3>
+          <p>Tap <em>Scan everything</em>. DocFinder goes through your photos and files, showing live progress and time left. You can keep using your phone.</p>
+        </div>
+        <div class="step reveal">
+          <h3>It sorts for you</h3>
+          <p>Each document is read and filed into the right category — from National ID to Lab Report — with its important details pulled out.</p>
+        </div>
+        <div class="step reveal">
+          <h3>Find anything, fast</h3>
+          <p>Browse by category or search by a number, a name, a date or any word. Open, share, rename or move a document in a tap.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ SEARCH SPOTLIGHT ============ -->
+  <section class="section" id="search">
+    <div class="container split">
+      <div class="reveal">
+        <span class="kicker">Smart search</span>
+        <h2>Type it any way. Find it every time.</h2>
+        <p class="lead">ID numbers are written in a dozen different ways. DocFinder ignores the formatting, so the whole number, the number without dashes, or just a part of it all lead to the same document — and it shows you exactly why it matched.</p>
+        <ul class="checks">
+          <li><svg><use href="#i-check-circle"/></svg><span><b>Every word counts</b>Searches titles, the text inside, extracted details, category and file type.</span></li>
+          <li><svg><use href="#i-check-circle"/></svg><span><b>Filter in a tap</b>Narrow results to images, PDFs &amp; files, or a single category.</span></li>
+          <li><svg><use href="#i-check-circle"/></svg><span><b>Details at a glance</b>Open a document to see its ID, name, dates, IBAN and totals — tap any to copy.</span></li>
+        </ul>
+      </div>
+      <div class="search-demo reveal" aria-label="Example: three ways of typing the same ID number all find the same document">
+        <div class="q"><svg><use href="#i-search"/></svg><code>35202 1234567 1</code><span class="ok"><svg><use href="#i-check"/></svg>Match</span></div>
+        <div class="q"><svg><use href="#i-search"/></svg><code>3520212345671</code><span class="ok"><svg><use href="#i-check"/></svg>Match</span></div>
+        <div class="q"><svg><use href="#i-search"/></svg><code>1234567</code><span class="ok"><svg><use href="#i-check"/></svg>Match</span></div>
+        <div class="arrow"><svg><use href="#i-down"/></svg></div>
+        <div class="result">
+          <span class="s-thumb" style="background:#0f766e"><svg><use href="#i-id"/></svg></span>
+          <span>
+            <b>National ID card</b>
+            <span class="meta">Identity &amp; Civil · matched <mark>35202-1234567-1</mark></span>
+          </span>
+        </div>
+        <div class="fields">
+          <div class="field"><small>ID number</small><span>35202-1234567-1</span></div>
+          <div class="field"><small>Expiry</small><span>14 Mar 2031</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ CATEGORIES ============ -->
+  <section class="section alt" id="categories">
+    <div class="container">
+      <div class="section-head reveal">
+        <span class="kicker">Categories</span>
+        <h2>30 categories. 7 groups. Zero effort.</h2>
+        <p>Every document lands where you would expect it. Got one in the wrong place? Move it — your choice is remembered.</p>
+      </div>
+      <div class="groups">
+        <div class="group reveal">
+          <div class="group-head"><span class="g-ic" style="background:#0f766e"><svg><use href="#i-id"/></svg></span><div><h3>Identity &amp; Civil</h3><span>7 categories</span></div></div>
+          <ul class="chips"><li>National ID</li><li>Passport</li><li>Residence Permit</li><li>Driving License</li><li>Visa</li><li>Birth Certificate</li><li>Marriage Certificate</li></ul>
+        </div>
+        <div class="group reveal">
+          <div class="group-head"><span class="g-ic" style="background:#2563eb"><svg><use href="#i-wallet"/></svg></span><div><h3>Money &amp; Bills</h3><span>9 categories</span></div></div>
+          <ul class="chips"><li>Bank Card</li><li>Bank Statement</li><li>Cheque</li><li>Invoice</li><li>Utility Bill</li><li>Receipt</li><li>Salary Slip</li><li>Tax Document</li><li>Insurance</li></ul>
+        </div>
+        <div class="group reveal">
+          <div class="group-head"><span class="g-ic" style="background:#7c3aed"><svg><use href="#i-briefcase"/></svg></span><div><h3>Work &amp; Education</h3><span>4 categories</span></div></div>
+          <ul class="chips"><li>Certificate / Degree</li><li>Transcript / Marksheet</li><li>CV / Resume</li><li>Employment Letter</li></ul>
+        </div>
+        <div class="group reveal">
+          <div class="group-head"><span class="g-ic" style="background:#b45309"><svg><use href="#i-scale"/></svg></span><div><h3>Legal &amp; Property</h3><span>4 categories</span></div></div>
+          <ul class="chips"><li>Contract / Agreement</li><li>Rental / Tenancy</li><li>Property Deed</li><li>Legal / Court</li></ul>
+        </div>
+        <div class="group reveal">
+          <div class="group-head"><span class="g-ic" style="background:#dc2626"><svg><use href="#i-heart"/></svg></span><div><h3>Health</h3><span>4 categories</span></div></div>
+          <ul class="chips"><li>Medical Report</li><li>Lab Report</li><li>Prescription</li><li>Vaccination Record</li></ul>
+        </div>
+        <div class="group reveal">
+          <div class="group-head"><span class="g-ic" style="background:#0891b2"><svg><use href="#i-plane"/></svg></span><div><h3>Travel &amp; Vehicle</h3><span>3 categories</span></div></div>
+          <ul class="chips"><li>Ticket / Boarding Pass</li><li>Hotel / Booking</li><li>Vehicle Registration</li></ul>
+          <div class="group-head" style="margin:20px 0 14px"><span class="g-ic" style="background:#64748b"><svg><use href="#i-folder"/></svg></span><div><h3>Other</h3><span>1 category</span></div></div>
+          <ul class="chips"><li>Other Documents</li></ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ PRIVACY ============ -->
+  <section class="section privacy-band" id="privacy">
+    <div class="container split">
+      <div class="reveal">
+        <span class="kicker">Privacy first</span>
+        <h2>Your documents never leave your phone.</h2>
+        <p class="lead">IDs, bank statements and medical reports are the most personal files you own. That is why DocFinder reads and sorts everything on your device. There is no DocFinder server, and your documents and their text are never uploaded.</p>
+        <a class="link-light" href="privacy.html">Read the privacy policy <svg><use href="#i-right"/></svg></a>
+      </div>
+      <div class="privacy-grid">
+        <div class="p-item reveal"><svg><use href="#i-lock"/></svg><b>On-device reading</b><span>Text recognition and sorting run entirely on your phone.</span></div>
+        <div class="p-item reveal"><svg><use href="#i-user-x"/></svg><b>No account</b><span>No sign-up, no email, no login. Just open and scan.</span></div>
+        <div class="p-item reveal"><svg><use href="#i-file-check"/></svg><b>Read-only</b><span>Your original files are never edited, moved or deleted.</span></div>
+        <div class="p-item reveal"><svg><use href="#i-wifi-off"/></svg><b>Works offline</b><span>Scanning and search work without an internet connection.</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ PLATFORMS ============ -->
+  <section class="section" id="download">
+    <div class="container">
+      <div class="section-head reveal">
+        <span class="kicker">Download</span>
+        <h2>Available on Android. iPhone is next.</h2>
+      </div>
+      <div class="platforms">
+        <div class="platform reveal">
+          <div class="p-top"><h3>Android</h3><span class="badge live">Available now</span></div>
+          <p>Scans every photo and every PDF, Word, Excel and PowerPoint file on your phone and SD card. Free on Google Play.</p>
+          <a class="store" data-store="play" href="https://play.google.com/store/apps/details?id=com.najeebkhan.docfinder" target="_blank" rel="noopener" aria-label="Get DocFinder on Google Play">
+            <svg aria-hidden="true"><use href="#i-play"/></svg>
+            <span><small>Get it on</small><strong>Google Play</strong></span>
+          </a>
+        </div>
+        <div class="platform reveal">
+          <div class="p-top"><h3>iPhone</h3><span class="badge soon" data-ios-badge>Coming soon</span></div>
+          <p>DocFinder for iOS is in development. Check back here — the App Store link will appear on this page as soon as it launches.</p>
+          <a class="store soon" data-store="ios" aria-label="DocFinder for iPhone: coming soon to the App Store">
+            <svg aria-hidden="true"><use href="#i-phone"/></svg>
+            <span><small>Coming soon on</small><strong>App Store</strong></span>
+            <span class="tag">Soon</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ FAQ ============ -->
+  <section class="section alt" id="faq">
+    <div class="container">
+      <div class="section-head reveal">
+        <span class="kicker">FAQ</span>
+        <h2>Questions, answered</h2>
+      </div>
+      <div class="faq">
+        <details class="reveal" open>
+          <summary>Are my documents uploaded anywhere?</summary>
+          <p>No. DocFinder reads, sorts and searches your documents entirely on your phone. There is no DocFinder server and no account, so your photos, files and the text found in them stay on your device.</p>
+        </details>
+        <details class="reveal">
+          <summary>Is DocFinder free?</summary>
+          <p>Yes, DocFinder is free to download and use. On Android it shows a small banner ad, which helps support development.</p>
+        </details>
+        <details class="reveal">
+          <summary>Which files can it find?</summary>
+          <p>Photos and screenshots (JPG, PNG and other image formats), PDFs, and Word, Excel and PowerPoint files. Scanned PDF pages without a text layer are read with text recognition too.</p>
+        </details>
+        <details class="reveal">
+          <summary>Why does it ask for “All files access” on Android?</summary>
+          <p>On Android 11 and later, this permission is the only way an app can find PDF and Office files across your whole phone and SD card. DocFinder uses it only to read those documents during a scan — it never changes, moves or deletes your files. You can skip it and still scan your photos.</p>
+        </details>
+        <details class="reveal">
+          <summary>Will it change or delete my files?</summary>
+          <p>Never. Your original files stay exactly where they are. “Remove from list” only removes a document from DocFinder’s list, not from your phone.</p>
+        </details>
+        <details class="reveal">
+          <summary>A document is in the wrong category. Can I fix it?</summary>
+          <p>Yes. Open the document and move it to another category, or rename it. DocFinder remembers your choice and will not override it later.</p>
+        </details>
+        <details class="reveal">
+          <summary>Does it work without internet?</summary>
+          <p>Yes. Scanning, sorting and search all work offline.</p>
+        </details>
+        <details class="reveal">
+          <summary>When is the iPhone version coming?</summary>
+          <p>The iOS version is in development. The App Store link will be added to this page as soon as it is live.</p>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ CTA ============ -->
+  <section class="cta">
+    <div class="container">
+      <div class="cta-box reveal">
+        <img src="assets/icon-512.png" alt="DocFinder app icon" width="76" height="76">
+        <h2>Stop scrolling for that one document.</h2>
+        <p>Let DocFinder find it, sort it and keep it one search away.</p>
+        <div class="store-row">
+          <a class="store" data-store="play" href="https://play.google.com/store/apps/details?id=com.najeebkhan.docfinder" target="_blank" rel="noopener" aria-label="Get DocFinder on Google Play">
+            <svg aria-hidden="true"><use href="#i-play"/></svg>
+            <span><small>Get it on</small><strong>Google Play</strong></span>
+          </a>
+          <a class="store soon" data-store="ios" aria-label="DocFinder for iPhone: coming soon to the App Store">
+            <svg aria-hidden="true"><use href="#i-phone"/></svg>
+            <span><small>Coming soon on</small><strong>App Store</strong></span>
+            <span class="tag">Soon</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="foot">
+      <a class="brand" href="#top"><img src="assets/icon-512.png" alt="" width="34" height="34">DocFinder</a>
+      <nav aria-label="Footer">
+        <a href="#features">Features</a>
+        <a href="#faq">FAQ</a>
+        <a href="privacy.html">Privacy Policy</a>
+        <a href="https://github.com/najeebkhan096/docfinder/issues" target="_blank" rel="noopener">Contact &amp; support</a>
+      </nav>
+    </div>
+    <p class="fine">© <span data-year>2026</span> DocFinder by Najeeb Khan. Google Play and the Google Play logo are trademarks of Google LLC. App Store is a service mark of Apple Inc.</p>
+  </div>
+</footer>
+
+<script src="assets/site.js"></script>
+</body>
+</html>
