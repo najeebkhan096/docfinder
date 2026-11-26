@@ -1,3 +1,3 @@
 User-agent: *
 Allow: /
-Sitemap: https://najeebkhan096.github.io/docfinder/sitemap.xml
+Sitemap: https://docfinder-site.web.app/sitemap.xml
